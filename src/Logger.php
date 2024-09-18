@@ -16,7 +16,7 @@ trait Logger
         $this->logger = $logger;
     }
 
-    public function addRedisLogger(string $redisHost, int $redisPort, string $password = '', int $db = 10): void
+    public function addRedisLogger(string $redisHost='127.0.0.1', int $redisPort=6379, string $password = '', int $db = 10, string $logName = 'redis_log'): void
     {
         $redis = new \Redis();
         $redis->connect($redisHost, $redisPort);
@@ -26,7 +26,7 @@ trait Logger
         }
 
         $redis->select($db);
-        $handler = new RedisHandler($redis, 'log_channel', \Monolog\Logger::DEBUG);
+        $handler = new RedisHandler($redis, $logName, \Monolog\Logger::DEBUG);
         $this->pushLoggerHandler($handler);
     }
 
