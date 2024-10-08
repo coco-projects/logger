@@ -1,2 +1,2 @@
-[2024-09-26 19:39:46] test.DEBUG: test log1 []
-[2024-09-26 19:39:46] test.ALERT: test log2 {"key":"value"}
+[2024-10-08 19:30:52] test.DEBUG: test log1 []
+[2024-10-08 19:30:52] test.ALERT: test log2 {"key":"value"}

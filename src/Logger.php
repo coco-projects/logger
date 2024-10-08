@@ -140,4 +140,11 @@ trait Logger
     {
         $this->logger && $this->logger->{$level}($msg, $context);
     }
+
+    public static function getStandardFormatter(): \Closure
+    {
+        return function (StreamHandler $handler, $_this) {
+            $handler->setFormatter(new StandardFormatter());
+        };
+    }
 }

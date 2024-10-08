@@ -4,7 +4,7 @@
 
     use Monolog\Formatter\LineFormatter;
 
-class MyFormatter extends LineFormatter
+class StandardFormatter extends LineFormatter
 {
     public function format(array $record): string
     {

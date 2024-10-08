@@ -14,13 +14,11 @@
     $demo->setStandardLogger('test');
 
     $demo->addStdoutHandler(callback: function(StreamHandler $handler, Demo $_this) {
-        $handler->setFormatter(new \Coco\logger\MyFormatter());
+        $handler->setFormatter(new \Coco\logger\StandardFormatter());
     });
 
     $demo->addRedisHandler();
-    $demo->addFileHandler(path: 'log.log', callback: function(StreamHandler $handler, Demo $_this) {
-        $handler->setFormatter(new \Coco\logger\MyFormatter());
-    });
+    $demo->addFileHandler(path: 'log.log', callback: Demo::getStandardFormatter());
 
     $demo->logDebug('test log1');
 
