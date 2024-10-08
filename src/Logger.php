@@ -143,7 +143,7 @@ trait Logger
 
     public static function getStandardFormatter(): \Closure
     {
-        return function (StreamHandler $handler, $_this) {
+        return function ($handler, $_this) {
             $handler->setFormatter(new StandardFormatter());
         };
     }
