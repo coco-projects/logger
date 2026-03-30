@@ -7,7 +7,7 @@
 
     class StandardFormatter extends LineFormatter
 {
-    public function format(LogRecord $record): string
+    public function format(array $record): string
     {
         $date = (new \DateTime())->setTimestamp($record['datetime']->getTimestamp())->format('Y-m-d H:i:s');
 
