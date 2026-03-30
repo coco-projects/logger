@@ -3,10 +3,11 @@
     namespace Coco\logger;
 
     use Monolog\Formatter\LineFormatter;
+    use Monolog\LogRecord;
 
-class StandardFormatter extends LineFormatter
+    class StandardFormatter extends LineFormatter
 {
-    public function format(array $record): string
+    public function format(LogRecord $record): string
     {
         $date = (new \DateTime())->setTimestamp($record['datetime']->getTimestamp())->format('Y-m-d H:i:s');
 
